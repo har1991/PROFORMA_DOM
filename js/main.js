@@ -1,3 +1,5 @@
+var i = 20;
+
 document.forms[0].ch1.addEventListener('focus', () => {        
     document.forms[0].ch1.value="";
 })
@@ -15,7 +17,12 @@ document.getElementById("outside").addEventListener("click", function() {
 
 document.getElementById("changingSize").addEventListener("keydown", changingSize);
 function changingSize() {
-  document.getElementById("changingSize").size = "50";
+  if (i < 80 ){
+  document.getElementById("changingSize").size = ++i;
+  }
+  else {
+     i=80;
+  }
 }
 
 
