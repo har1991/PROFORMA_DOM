@@ -14,7 +14,7 @@ document.getElementById("outside").addEventListener("click", function() {
   document.forms[1].ch1.value= "Texte initial";
   
 }, true);
-
+//changer le taille de champ 
 document.getElementById("changingSize").addEventListener("keydown", changingSize);
 function changingSize() {
   if (i < 80 ){
