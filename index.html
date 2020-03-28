@@ -94,11 +94,11 @@
           </p>
           <form action="javascript:void">
                 <label for="rb1_1">Incrémente : </label>
-                    <input type="radio" name="rb1" value="+1" id="rb1_1">
+                <input type="radio" id="increament"  name="math" >
                 <label for="rb1_2">Décrémente : </label>
-                <input type="radio" name="rb1" value="-1" id="rb1_2"><br>
-                <input type="text" name="ch1" value="0"/>
-                <input type="button" value="Action!" name="b1">
+                <input type="radio" id="decreament" name="math" ><br>
+                <input type="text" id="changingValue" name="ch1" placeholder="0" readonly/>
+                <input type="button" onclick="incrementDecrement()" value="Action!" name="b1">
           </form>
       </div>
       <div class="exercice">
@@ -121,14 +121,15 @@
           <br>Property : options(array), selectedOption, text, value
         </p>
         <form action="javascript:void(0)">
-          <label for="ch1">Valeur : </label><input type="text" name="ch1" /><br/>
-          <label for="ch2">Texte : </label><input type="text" name="ch2" /><br/>
-          <select name="s1">
-            <option value="1">item 1</option>
-            <option value="2">item 2</option>
-            <option value="3">item 3</option>
-            <option value="4">item 4</option>
-            <option value="5">item 5</option>
+          <label for="ch1">Valeur : </label><input id = "demo-value" type="text" name="ch1" /><br/>
+          <label for="ch2">Texte : </label><input id ="demo-text" type="text" name="ch2" /><br/>
+          <select id="itemSelect" name="s1">
+            <option disabled selected="selected">Sélectionnez un élément </option>
+            <option label="Item 1" value="1" >item 1</option>
+            <option label="Item 2" value="2" >item 2</option>
+            <option label="Item 3" value="3" >item 3</option>
+            <option label="Item 4" value="4" >item 4</option>
+            <option label="Item 5" value="5" >item 5</option>
           </select>
         </form>
       </div>

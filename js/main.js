@@ -1,4 +1,5 @@
 var i = 20;
+let m = 0;
 
 document.forms[0].ch1.addEventListener('focus', () => {        
     document.forms[0].ch1.value="";
@@ -60,3 +61,23 @@ function showPassword() {
     var initialText = "InitialText" ;
     document.getElementById("defaltValue").value = initialText ;
   }
+  function incrementDecrement() {
+    
+    if(document.getElementById("increament").checked == true)
+    {
+        document.getElementById('changingValue').value = ++m;
+    }
+    else if (document.getElementById("decreament").checked == true) {
+        document.getElementById('changingValue').value = --m;
+    }
+  }
+  let selectItemValue = document.getElementById('itemSelect');
+
+  selectItemValue.addEventListener('change', function() {
+    let selectedOption = this.options[this.selectedIndex];
+    //var handle = selectedOption.getAttribute('data-handle');
+    let itemText = selectedOption.label;
+    let ItemValue= selectedOption.value;
+    document.getElementById("demo-value").value = ItemValue;
+    document.getElementById("demo-text").value = itemText;
+});
