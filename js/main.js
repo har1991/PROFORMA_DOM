@@ -105,5 +105,23 @@ function pushRight(){
   document.getElementById("Button3").value = b ;
   document.getElementById("Button4").value = c ;
   document.getElementById("Button5").value = d ;
-  
+}
+let fistTextBox = document.getElementById("textBox1");
+let secondTextBox = document.getElementById("textBox2");
+let thirdTextBox = document.getElementById("textBox3");
+    document.getElementById("textBox2").disabled = true;
+    document.getElementById("textBox3").disabled = true;
+    
+
+fistTextBox.onkeyup = function() {
+    if (this.value.length === parseInt(this.attributes["maxlength"].value)) {
+        document.getElementById("textBox2").disabled = false;
+        secondTextBox.focus();        
+    }
+}
+secondTextBox.onkeyup = function() {
+    if (this.value.length === parseInt(this.attributes["maxlength"].value)) {
+        document.getElementById("textBox3").disabled = false;
+        thirdTextBox.focus();
+    }
 }
