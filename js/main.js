@@ -6,11 +6,14 @@ document.forms[0].ch1.addEventListener('focus', () => {
 })
 
 
-document.forms[1].ch1.addEventListener('focus', () => {
-  document.forms[1].ch1.value = "";
-})
 
-document.getElementById("outside").addEventListener("click", function () {
+
+document.getElementById("insideTextBox").addEventListener("click", function () {
+ 
+  document.forms[1].ch1.value = "";
+
+}, true);
+document.getElementById("outsideTextBox").addEventListener("click", function () {
 
   document.forms[1].ch1.value = "Texte initial";
 
@@ -137,3 +140,29 @@ function emptyFields(){
       document.forms[6].ch1.value = "0";
       }
   }
+
+  function disappear() {
+       
+    if (document.getElementById("checkedDisapear").checked ==true){
+        document.getElementById("appaer").style.display = "none";
+    }
+    else if ((document.getElementById("checkedDisapear").checked ==false)) {
+
+        document.getElementById("appaer").style.display = "inline";
+    }
+
+   }
+    
+   document.getElementById("insdideInput").addEventListener("click", function () {
+
+    document.getElementById("insdideInput").style.height ="116px" ;
+    document.getElementById("insdideInput").style.width ="241px" ;
+  
+  }, true);
+  document.getElementById("outsideInput").addEventListener("click", function () {
+
+    document.getElementById("insdideInput").style.height ="16px" ;
+    document.getElementById("insdideInput").style.width ="141px" ;
+  
+  }, true);
+    

@@ -24,13 +24,13 @@
         </form>
       </div>
       <div >
-        <p id="outside" class="ennonce" >
+        <p id="outsideTextBox" class="ennonce" >
           Un champ qui se vide lorsque l'on entre dedans et qui remet la valeur initiale si le champ est vide lorsqu'on le quitte.
           <br>Event : focus, blur
           <br>Property : value, defaultValue
         </p>
         <form action="javascript:void(0)">
-          <input type="text"  name="ch1" value="Texte initial"/>
+          <input id="insideTextBox" type="text"  name="ch1" value="Texte initial"/>
         </form>
       </div>
       <div class="exercice">
@@ -205,16 +205,16 @@
           </p>
           <form action="javascript:void">
              <label for="cb1">Apprait/Disparait : </label>
-             <input type="checkbox" name="cb1"><br>
-              <input type="text" name="ch1">
-            </form>
+             <input id="checkedDisapear" onclick="disappear()" type="checkbox" name="cb1"><br>
+              <input id="appaer" type="text" name="ch1">
+          </form>
       </div>
-      <div class="exercice">
+      <div id="outsideInput" class="exercice">
           <p class="ennonce">
               Un champ qui augmente en hauteur et en largeur de 1OOpx à chaque fois que l'on entre le focus dedans (parseInt() et style.height). Il retourne à son état initial en sortant.
           </p>
           <form action="javascript:void">
-              <input type="text" name="ch1">
+              <input id="insdideInput" type="text" name="ch1">
           </form>
       </div>
       <div class="exercice">
