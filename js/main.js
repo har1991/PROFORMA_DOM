@@ -81,3 +81,29 @@ function showPassword() {
     document.getElementById("demo-value").value = ItemValue;
     document.getElementById("demo-text").value = itemText;
 });
+
+function pushLeft(){
+  let a = document.getElementById("Button1").value;
+  let b = document.getElementById("Button2").value;
+  let c = document.getElementById("Button3").value;
+  let d = document.getElementById("Button4").value;
+  let e = document.getElementById("Button5").value;
+  document.getElementById("Button1").value = b ;
+  document.getElementById("Button2").value = c ;
+  document.getElementById("Button3").value = d ;
+  document.getElementById("Button4").value = e ;
+  document.getElementById("Button5").value = a ;     
+}
+function pushRight(){
+  let a = document.getElementById("Button1").value;
+  let b = document.getElementById("Button2").value;
+  let c = document.getElementById("Button3").value;
+  let d = document.getElementById("Button4").value;
+  let e = document.getElementById("Button5").value;
+  document.getElementById("Button1").value = e ;
+  document.getElementById("Button2").value = a ;
+  document.getElementById("Button3").value = b ;
+  document.getElementById("Button4").value = c ;
+  document.getElementById("Button5").value = d ;
+  
+}
