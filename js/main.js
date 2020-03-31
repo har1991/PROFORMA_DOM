@@ -6,8 +6,6 @@ document.forms[0].ch1.addEventListener('focus', () => {
 })
 
 
-
-
 document.getElementById("insideTextBox").addEventListener("click", function () {
  
   document.forms[1].ch1.value = "";
@@ -29,7 +27,7 @@ function changingSize() {
   }
 }
 
-
+// affiche le mot de pass
 function showPassword() {
   let x = document.getElementById("myInput");
   if (x.type === "password") {
@@ -41,11 +39,8 @@ function showPassword() {
 
 function mouseDown() {
   var x = document.getElementById("myText");
-
   x.type = "text";
-
 }
-
 function mouseUp() {
   var x = document.getElementById("myText");
   x.type = "password";
@@ -59,7 +54,6 @@ function getFocus() {
 function changeDefult() {
   var x = document.getElementById("defaltValue").value;
   document.getElementById("defaltValue").value = x;
-
 
 }
 
