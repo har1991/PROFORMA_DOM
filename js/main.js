@@ -1,11 +1,11 @@
 let i = 20;
 let m = 0;
-
+//Un champ qui se vide lorsque l'on entre dedans.
 document.forms[0].ch1.addEventListener('focus', () => {
   document.forms[0].ch1.value = "";
 })
 
-
+// Un champ qui se vide lorsque l'on entre dedans et qui remet la valeur initiale si le champ est vide lorsqu'on le quitte.
 document.getElementById("insideTextBox").addEventListener("click", function () {
  
   document.forms[1].ch1.value = "";
