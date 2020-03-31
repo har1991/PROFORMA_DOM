@@ -1,4 +1,4 @@
-var i = 20;
+let i = 20;
 let m = 0;
 
 document.forms[0].ch1.addEventListener('focus', () => {
