@@ -6,12 +6,12 @@ document.forms[0].ch1.addEventListener('focus', () => {
 })
 
 // Un champ qui se vide lorsque l'on entre dedans et qui remet la valeur initiale si le champ est vide lorsqu'on le quitte.
-document.getElementById("insideTextBox").addEventListener("click", function () {
+document.getElementById("insideTextBox").addEventListener("focus", function () {
  
   document.forms[1].ch1.value = "";
 
 }, true);
-document.getElementById("outsideTextBox").addEventListener("click", function () {
+document.getElementById("insideTextBox").addEventListener("blur", function () {
 
   document.forms[1].ch1.value = "Texte initial";
 
@@ -36,20 +36,30 @@ function showPassword() {
     x.type = "password";
   }
 }
-
-function mouseDown() {
+document.getElementById("mouse").addEventListener("mousedown",function(){
   var x = document.getElementById("myText");
   x.type = "text";
-}
-function mouseUp() {
+})
+document.getElementById("mouse").addEventListener("mouseup",function(){
   var x = document.getElementById("myText");
   x.type = "password";
+})
 
-}
 
-function getFocus() {
-  document.getElementById("focus").focus();
-}
+  document.getElementById("focus").addEventListener("focus",function(){
+    document.getElementById("focus").blur();
+  })
+ 
+    function emptyFields(){
+    if (document.getElementById("checkbox").checked ==true){
+        document.forms[6].ch1.focus();
+        document.forms[6].ch1.value = "";
+        
+    }else if ((document.getElementById("checkbox").checked == false)) {
+        document.forms[6].ch1.value = "0";
+        document.forms[6].ch1.blur();
+        }
+      }
 
 function changeDefult() {
   var x = document.getElementById("defaltValue").value;
@@ -58,7 +68,7 @@ function changeDefult() {
 }
 
 function resetDefalt() {
-  var initialText = "InitialText";
+  var initialText = document.getElementById("defaltValue").value;
   document.getElementById("defaltValue").value = initialText;
 }
 
@@ -75,7 +85,7 @@ let selectItemValue = document.getElementById('itemSelect');
 selectItemValue.addEventListener('change', function () {
   let selectedOption = this.options[this.selectedIndex];
   //var handle = selectedOption.getAttribute('data-handle');
-  let itemText = selectedOption.label;
+  let itemText = selectedOption.text;
   let ItemValue = selectedOption.value;
   document.getElementById("demo-value").value = ItemValue;
   document.getElementById("demo-text").value = itemText;
@@ -106,6 +116,7 @@ function pushRight() {
   document.getElementById("Button4").value = c;
   document.getElementById("Button5").value = d;
 }
+
 let fistTextBox = document.getElementById("textBox1");
 let secondTextBox = document.getElementById("textBox2");
 let thirdTextBox = document.getElementById("textBox3");
@@ -125,15 +136,7 @@ secondTextBox.onkeyup = function () {
     thirdTextBox.focus();
   }
 }
-function emptyFields(){
-    
-  if (document.getElementById("checkbox").checked ==true){
-      document.forms[6].ch1.value = "";
-      
-  }else if ((document.getElementById("checkbox").checked == false)) {
-      document.forms[6].ch1.value = "0";
-      }
-  }
+
 
   function disappear() {
        
@@ -160,3 +163,26 @@ function emptyFields(){
   
   }, true);
     
+  const arrayCarre = Array.from(document.querySelectorAll('div:nth-of-type(17) > div div'));
+
+arrayCarre.forEach((carre) => {
+    carre.addEventListener('click', () => {
+        arrayCarre.map((allCarre) => allCarre.classList.remove('checked'));
+        carre.classList.add('checked');
+    })
+
+})
+const arrayCarre2 = Array.from(document.querySelectorAll('div:nth-of-type(18) > div div'));
+
+arrayCarre2.forEach((carre) => {
+
+    carre.addEventListener('click', () => {
+        arrayCarre2.map((allCarre) => allCarre.classList.remove('checked'));
+        carre.classList.add('checked');
+        const getColor = carre.getAttribute('data-color');
+        const carreResult = document.querySelector('#out');
+        carreResult.classList.remove('rouge', 'vert', 'bleu', 'jaune');
+        carreResult.classList.add(getColor);
+       
+    })
+}) 
